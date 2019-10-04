@@ -1,6 +1,6 @@
 import React from 'react';
 import { useInput } from '../hooks/useInput'
-import "../App"
+import "../App.css"
 
 const Search = (props) => {
 

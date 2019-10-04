@@ -4,9 +4,23 @@ import Search from './components/Search';
 import App from './App';
 
 
-test('App renders without crashiing', () => {
+
+test('Search renders without crashing', () => {
   render(<App />)
 })
-test('Search renders without crashing', () => {
-  render(<Search />)
+
+test("Header is found", () => {
+  const { getByText } = render(<App />);
+
+  getByText(/Women's World Cup/i)
+})
+
+test("Button works", () => {
+  const {getByText} = render(<App />)
+  fireEvent.click(getByText("Search"))
+})
+
+test("Player exists", () => {
+  const {findByText} = render(<App />)
+  findByText(/Alex Morgan/i)
 })

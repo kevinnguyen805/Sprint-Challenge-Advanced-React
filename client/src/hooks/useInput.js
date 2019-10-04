@@ -14,7 +14,7 @@ export const useInput = (soccerPlayers) => {
 
      const formSubmit = event => {
           event.preventDefault();
-          const results = soccerPlayers.filter(item => item.name === searchTerm)
+          const results = soccerPlayers.filter(item => item.name.toLowerCase().includes(searchTerm))
           setSearchResults(results)
      }
 
