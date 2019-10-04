@@ -1,6 +1,6 @@
 import React from 'react';
 import { useInput } from '../hooks/useInput'
-
+import "../App"
 
 const Search = (props) => {
 
@@ -9,26 +9,43 @@ const Search = (props) => {
 
      return(
           <div>
+               <div>
                <form onSubmit={formSubmit}>
                     <input 
                          id="search"
                          type="text"
                          name="textfield"
+                         placeholder="Looking for a player?"
                          value={searchTerm}
                          onChange={handleChange}
                     />
-                    <button>Submit</button>
+                    <button>Search</button>
                </form>
-               {
-                    searchResults.map(item => {
-                         return (
-                         <div key={item.id}>
-                              <p>{item.name}</p>
-                              <p>{item.country}</p>
+
+                    <div>
+                         {
+                         searchResults.map(item => {
+                              return (
+                              <div key={item.id}>
+                                   <p>{item.name}</p>
+                                   <p>{item.country}</p>
+                              </div>
+                              )
+                         })
+                    }
+                    </div>
+               </div>
+          <div className="soccer-players">
+               {soccerPlayers.map(item => {
+                    return(
+                         <div className="soccer-player" key={item.id}>
+                              <p className="player"> ⚽️ {item.name} ⚽️</p>
+                              <p className="country">{item.country}</p>
                          </div>
-                         )
-                    })
-               }
+                    )
+               })} 
+
+          </div>
      </div>
      )
 }
@@ -38,13 +55,8 @@ export default Search
 
 
 
-{/* 
-               {soccerPlayers.map(item => {
-                    return(
-                         <div key={item.id}>{item.name}</div>
-                    )
-               })} */}
 
+          
 
 
 

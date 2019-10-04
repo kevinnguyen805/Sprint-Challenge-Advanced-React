@@ -1,9 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render, fireEvent } from '@testing-library/react'
+import Search from './components/Search';
 import App from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+
+test('App renders without crashiing', () => {
+  render(<App />)
+})
+test('Search renders without crashing', () => {
+  render(<Search />)
+})
