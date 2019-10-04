@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios'
+import Search from './components/Search'
 import './App.css';
 
 
@@ -8,7 +9,7 @@ class App extends React.Component{
   constructor(){
     super();
     this.state = {
-      soccerData: []
+      soccerData: [],
     }
   }
 
@@ -24,20 +25,11 @@ class App extends React.Component{
       .catch(error => console.log(error))
   }
 
-
   render(){return (
     <div className="App">
-      Hello
-      {
-        this.state.soccerData.map(item => {
-          return(
-            <div key={item.id}>
-              <p>{item.name}</p>
-              <p>{item.country}</p>
-            </div>
-          )
-        })
-      }
+      <div>
+        <Search soccerData={this.state.soccerData}/>
+      </div>
     </div>
   );
   }
