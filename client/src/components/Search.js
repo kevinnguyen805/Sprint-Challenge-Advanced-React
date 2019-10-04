@@ -26,7 +26,7 @@ const Search = (props) => {
                          {
                          searchResults.map(item => {
                               return (
-                              <div key={item.id}>
+                              <div key={item.id} className="search-results">
                                    <p>{item.name}</p>
                                    <p>{item.country}</p>
                               </div>
